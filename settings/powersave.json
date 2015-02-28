@@ -1,0 +1,40 @@
+{
+    "translation_catalog": "settings-system",
+    "entries": [
+        {
+            "path": "system_settings/info/powersave",
+            "title": "Powersave",
+            "translation_id": "settings_system-powersave",
+            "type": "page",
+            "icon": "image://theme/icon-m-powersave",
+            "order": 200,
+            "params": {
+                "source": "/usr/share/jolla-settings/pages/powersave/mainpage.qml"
+            }
+        },
+        {
+            "path": "system_settings/info/powersave/powersave_enable",
+            "type": "custom",
+            "params": {
+                "source": "/usr/share/jolla-settings/pages/powersave/EnableSwitch.qml",
+                "type": "grid"
+            }
+        },
+        {
+            "path": "system_settings/info/powersave/powersave_force",
+            "type": "custom",
+            "params": {
+                "source": "/usr/share/jolla-settings/pages/powersave/ForceSwitch.qml",
+                "type": "grid"
+            }
+        },
+        {
+            "path":  "system_settings/info/powersave/powersave_threshold",
+            "type": "custom",
+            "params": {
+                "source": "/usr/share/jolla-settings/pages/powersave/ThresholdSlider.qml",
+                "type": "list"
+            }
+        }
+    ]
+}
