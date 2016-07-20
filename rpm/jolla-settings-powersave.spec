@@ -41,8 +41,8 @@ mkdir -p %{buildroot}/usr/share/jolla-settings/pages/powersave
 cp -r settings/*.qml %{buildroot}/usr/share/jolla-settings/pages/powersave
 mkdir -p %{buildroot}/usr/share/jolla-settings/entries
 cp -r settings/*.json %{buildroot}/usr/share/jolla-settings/entries
-mkdir -p %{buildroot}/usr/share/themes/jolla-ambient/meegotouch/icons
-cp -r icons/*.png %{buildroot}/usr/share/themes/jolla-ambient/meegotouch/icons
+mkdir -p %{buildroot}/usr/share/themes/sailfish-default/meegotouch/icons
+cp -r icons/*.png %{buildroot}/usr/share/themes/sailfish-default/meegotouch/icons
 # << install pre
 
 # >> install post
@@ -52,6 +52,6 @@ cp -r icons/*.png %{buildroot}/usr/share/themes/jolla-ambient/meegotouch/icons
 %defattr(-,root,root,-)
 %{_datadir}/jolla-settings/entries
 %{_datadir}/jolla-settings/pages
-%{_datadir}/themes/jolla-ambient/meegotouch/icons
+%{_datadir}/themes/sailfish-default/meegotouch/icons
 # >> files
 # << files
