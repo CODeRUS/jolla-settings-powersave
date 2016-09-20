@@ -6,7 +6,7 @@
             "title": "Powersave",
             "translation_id": "settings_system-powersave",
             "type": "page",
-            "icon": "image://theme/icon-m-powersave",
+            "icon": "/usr/share/jolla-settings/pages/powersave/icon-m-powersave.png",
             "order": 200,
             "params": {
                 "source": "/usr/share/jolla-settings/pages/powersave/mainpage.qml"

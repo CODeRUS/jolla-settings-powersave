@@ -1,7 +1,7 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import com.jolla.settings 1.0
-import org.coderus.psmdbus 2.0
+import org.nemomobile.dbus 2.0
 
 Page {
     id: page
@@ -76,75 +76,40 @@ Page {
                 title: qsTr("Powersave")
             }
 
-            ListItem {
-                id: enableItem
+            IconTextSwitch {
+                id: enableSwitch
 
-                contentHeight: enableSwitch.height
-                _backgroundColor: "transparent"
+                property string entryPath: "system_settings/info/powersave/powersave_enable"
 
-                highlighted: enableSwitch.down || menuOpen
+                automaticCheck: false
+                checked: values[key_powersave_enable]
+                text: "Enable powersave mode"
+                //description: qsTrId("settings_flight-la-flight-mode-description")
+                icon.source: "/usr/share/jolla-settings/pages/powersave/icon-m-powersave-enable"
 
-                showMenuOnPressAndHold: false
-                menu: Component { FavoriteMenu { } }
+                onClicked: mceRequestIface.setValue(key_powersave_enable, !checked)
 
-                IconTextSwitch {
-                    id: enableSwitch
-
-                    property string entryPath: "system_settings/info/powersave/powersave_enable"
-
-                    automaticCheck: false
-                    checked: values[key_powersave_enable]
-                    highlighted: enableItem.highlighted
-                    text: "Enable powersave mode"
-                    //description: qsTrId("settings_flight-la-flight-mode-description")
-                    icon.source: "image://theme/icon-m-powersave-enable"
-
-                    onClicked: mceRequestIface.setValue(key_powersave_enable, !checked)
-                    onPressAndHold: enableItem.showMenu({ settingEntryPath: entryPath, isFavorite: favorites.isFavorite(entryPath) })
-
-                }
             }
 
-            ListItem {
-                id: forceItem
+            IconTextSwitch {
+                id: forceSwitch
 
-                contentHeight: forceSwitch.height
-                _backgroundColor: "transparent"
+                property string entryPath: "system_settings/info/powersave/powersave_force"
 
-                highlighted: forceSwitch.down || menuOpen
+                automaticCheck: false
+                checked: values[key_powersave_force]
+                text: "Force powersave mode"
+                //description: qsTrId("settings_flight-la-flight-mode-description")
+                icon.source: "/usr/share/jolla-settings/pages/powersave/theme/icon-m-powersave-force"
 
-                showMenuOnPressAndHold: false
-                menu: Component { FavoriteMenu { } }
-
-                IconTextSwitch {
-                    id: forceSwitch
-
-                    property string entryPath: "system_settings/info/powersave/powersave_force"
-
-                    automaticCheck: false
-                    checked: values[key_powersave_force]
-                    highlighted: forceItem.highlighted
-                    text: "Force powersave mode"
-                    //description: qsTrId("settings_flight-la-flight-mode-description")
-                    icon.source: "image://theme/icon-m-powersave-force"
-
-                    onClicked: mceRequestIface.setValue(key_powersave_force, !checked)
-                    onPressAndHold: forceItem.showMenu({ settingEntryPath: entryPath, isFavorite: favorites.isFavorite(entryPath) })
-                }
+                onClicked: mceRequestIface.setValue(key_powersave_force, !checked)
             }
 
-            ListItem {
-                id: threshold
-                contentHeight: thresholdSlider.height
-                showMenuOnPressAndHold: false
-                menu: Component { FavoriteMenu {} }
-                ThresholdSlider {
-                    id: thresholdSlider
-                    width: parent.width
-                    entryPath: "system_settings/info/powersave/powersave_threshold"
-                    highlighted: down || threshold.menuOpen
-                    onPressAndHold: threshold.showMenu({settingEntryPath: entryPath, isFavorite: favorites.isFavorite(entryPath)})
-                }
+            ThresholdSlider {
+                id: thresholdSlider
+                width: parent.width
+                entryPath: "system_settings/info/powersave/powersave_threshold"
+                highlighted: down
             }
         }
     }

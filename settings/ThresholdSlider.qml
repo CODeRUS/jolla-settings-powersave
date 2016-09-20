@@ -1,6 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import org.coderus.psmdbus 2.0
+import org.nemomobile.dbus 2.0
 
 Slider {
     id: slider
@@ -52,6 +52,6 @@ Slider {
 
     value: values[key_threshold_value] ? values[key_threshold_value] : 0
     onReleased: mceRequestIface.typedCall('set_config', [{"type": "s", "value": key_threshold_value},
-    													 {"type": "v", "value": parseInt(value)}])
+                                                         {"type": "v", "value": parseInt(value)}])
     onPressAndHold: cancel()
 }

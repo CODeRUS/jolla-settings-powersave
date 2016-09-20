@@ -1,6 +1,6 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import org.coderus.psmdbus 2.0
+import org.nemomobile.dbus 2.0
 
 Switch {
     id: mobileSwitch
@@ -48,7 +48,7 @@ Switch {
     checked: values[key_powersave_enable]
     automaticCheck: false
     onClicked: mceRequestIface.typedCall('set_config', [{"type": "s", "value": key_powersave_enable},
-    													{"type": "v", "value": !checked}])
+                                                        {"type": "v", "value": !checked}])
 
     Behavior on opacity { FadeAnimation { } }
 }
