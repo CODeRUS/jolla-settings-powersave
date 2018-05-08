@@ -46,7 +46,7 @@ Slider {
 
     minimumValue: 1
     maximumValue: 99
-    label: "Battery threshold"
+    label: qsTr("Battery threshold")
     valueText: parseInt(value) + "%"
     stepSize: 1
 
