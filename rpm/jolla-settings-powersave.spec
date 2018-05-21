@@ -5,7 +5,7 @@ Name:       jolla-settings-powersave
 BuildArch: noarch
 
 Summary:    Settings plugin for battery powersave management
-Version:    0.2.3
+Version:    0.2.4
 Release:    1
 Group:      Qt/Qt
 License:    TODO
@@ -31,6 +31,7 @@ mkdir -p %{buildroot}%{_datadir}/jolla-settings/entries
 cp -r settings/*.json %{buildroot}%{_datadir}/jolla-settings/entries
 mkdir -p %{buildroot}%{_datadir}/translations
 cp -r translations/settings-powersave-*.qm %{buildroot}%{_datadir}/translations
+cp %{buildroot}%{_datadir}/translations/settings-powersave-en.qm %{buildroot}%{_datadir}/translations/settings-powersave_eng_en.qm
 
 %files
 %defattr(-,root,root,-)
