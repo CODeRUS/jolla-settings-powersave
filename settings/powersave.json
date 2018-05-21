@@ -6,7 +6,7 @@
             "title": "Powersave",
             "translation_id": "settings_system-powersave",
             "type": "page",
-            "icon": "/usr/share/jolla-settings/pages/powersave/icon-m-powersave.png",
+            "icon": "image://theme/icon-m-powersave",
             "order": 200,
             "params": {
                 "source": "/usr/share/jolla-settings/pages/powersave/mainpage.qml"
@@ -14,6 +14,7 @@
         },
         {
             "path": "system_settings/info/powersave/powersave_enable",
+            "icon": "image://theme/icon-m-powersave",
             "type": "custom",
             "params": {
                 "source": "/usr/share/jolla-settings/pages/powersave/EnableSwitch.qml",
@@ -22,6 +23,7 @@
         },
         {
             "path": "system_settings/info/powersave/powersave_force",
+            "icon": "image://theme/icon-m-powersave-force",
             "type": "custom",
             "params": {
                 "source": "/usr/share/jolla-settings/pages/powersave/ForceSwitch.qml",

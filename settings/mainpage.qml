@@ -85,7 +85,7 @@ Page {
                 checked: values[key_powersave_enable]
                 text: "Enable powersave mode"
                 //description: qsTrId("settings_flight-la-flight-mode-description")
-                icon.source: "/usr/share/jolla-settings/pages/powersave/icon-m-powersave-enable"
+                icon.source: "image://theme/icon-m-powersave"
 
                 onClicked: mceRequestIface.setValue(key_powersave_enable, !checked)
 
@@ -100,7 +100,7 @@ Page {
                 checked: values[key_powersave_force]
                 text: "Force powersave mode"
                 //description: qsTrId("settings_flight-la-flight-mode-description")
-                icon.source: "/usr/share/jolla-settings/pages/powersave/theme/icon-m-powersave-force"
+                icon.source: "image://theme/icon-m-powersave-force"
 
                 onClicked: mceRequestIface.setValue(key_powersave_force, !checked)
             }

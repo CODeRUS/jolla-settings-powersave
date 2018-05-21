@@ -44,7 +44,7 @@ Switch {
         }
     }
 
-    icon.source: "/usr/share/jolla-settings/pages/powersave/icon-m-powersave-force"
+    icon.source: "image://theme/icon-m-powersave-force"
     checked: values[key_powersave_force]
     automaticCheck: false
     onClicked: mceRequestIface.typedCall('set_config', [{"type": "s", "value": key_powersave_force},
