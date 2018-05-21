@@ -19,9 +19,8 @@ Switch {
 
         Component.onCompleted: {
             typedCall('get_config', [{"type": "s", "value": key_powersave_enable}], function (value) {
-                var temp = values
-                temp[key_powersave_enable] = value
-                values = temp
+                values[key_powersave_enable] = value
+                valuesChanged()
             })
         }
     }
@@ -37,9 +36,8 @@ Switch {
 
         function config_change_ind(key, value) {
             if (key == key_powersave_enable) {
-                var temp = values
-                temp[key] = value
-                values = temp
+                values[key_powersave_enable] = value
+                valuesChanged()
             }
         }
     }

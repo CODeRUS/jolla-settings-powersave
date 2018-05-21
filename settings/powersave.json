@@ -1,10 +1,10 @@
 {
-    "translation_catalog": "settings-system",
+    "translation_catalog": "settings-powersave",
     "entries": [
         {
-            "path": "system_settings/info/powersave",
+            "path": "system_settings/system/powersave",
             "title": "Powersave",
-            "translation_id": "settings_system-powersave",
+            "translation_id": "settings-powersave-header_title",
             "type": "page",
             "icon": "image://theme/icon-m-powersave",
             "order": 200,
@@ -13,7 +13,9 @@
             }
         },
         {
-            "path": "system_settings/info/powersave/powersave_enable",
+            "path": "system_settings/system/powersave/powersave_enable",
+            "title": "Powersave mode",
+            "translation_id": "settings-powersave-enable_switch_text",
             "icon": "image://theme/icon-m-powersave",
             "type": "custom",
             "params": {
@@ -22,7 +24,9 @@
             }
         },
         {
-            "path": "system_settings/info/powersave/powersave_force",
+            "path": "system_settings/system/powersave/powersave_force",
+            "title": "Force powersave mode",
+            "translation_id": "ssettings-powersave-force_switch_text",
             "icon": "image://theme/icon-m-powersave-force",
             "type": "custom",
             "params": {
@@ -31,7 +35,9 @@
             }
         },
         {
-            "path":  "system_settings/info/powersave/powersave_threshold",
+            "path":  "system_settings/system/powersave/powersave_threshold",
+            "title": "Powersave threshold slider",
+            "translation_id": "settings-powersave-threshold_slider",
             "type": "custom",
             "params": {
                 "source": "/usr/share/jolla-settings/pages/powersave/ThresholdSlider.qml",

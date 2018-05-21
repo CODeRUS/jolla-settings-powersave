@@ -19,9 +19,8 @@ Slider {
 
         Component.onCompleted: {
             typedCall('get_config', [{"type": "s", "value": key_threshold_value}], function (value) {
-                var temp = values
-                temp[key_threshold_value] = value
-                values = temp
+                values[key_threshold_value] = value
+                valuesChanged()
             })
         }
     }
@@ -37,16 +36,17 @@ Slider {
 
         function config_change_ind(key, value) {
             if (key == key_threshold_value) {
-                var temp = values
-                temp[key] = value
-                values = temp
+                values[key_threshold_value] = value
+                valuesChanged()
             }
         }
     }
 
     minimumValue: 1
     maximumValue: 99
-    label: "Battery threshold"
+    //: Label of threshold slider
+    //% "Battery threshold"
+    label: qsTrId("settings-powersave-threshold_slider")
     valueText: parseInt(value) + "%"
     stepSize: 1
 

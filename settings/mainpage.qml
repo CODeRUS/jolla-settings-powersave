@@ -33,9 +33,8 @@ Page {
 
         function getValue(key) {
             typedCall('get_config', [{"type":"s", "value":key}], function (value) {
-                var temp = values
-                temp[key] = value
-                values = temp
+                values[key] = value
+                valuesChanged()
             })
         }
 
@@ -57,9 +56,8 @@ Page {
 
         function config_change_ind(key, value) {
             if (key in values) {
-                var temp = values
-                temp[key] = value
-                values = temp
+                values[key] = value
+                valuesChanged()
             }
         }
     }
@@ -73,7 +71,9 @@ Page {
             width: page.width
 
             PageHeader {
-                title: qsTr("Powersave")
+                //: Settings page header text
+                //% "Powersave"
+                title: qsTrId("settings-powersave-header_title")
             }
 
             IconTextSwitch {
@@ -83,8 +83,9 @@ Page {
 
                 automaticCheck: false
                 checked: values[key_powersave_enable]
-                text: "Enable powersave mode"
-                //description: qsTrId("settings_flight-la-flight-mode-description")
+                //: Powersave enable switch text
+                //% "Enable powersave mode"
+                text: qsTrId("settings-powersave-enable_switch_text")
                 icon.source: "image://theme/icon-m-powersave"
 
                 onClicked: mceRequestIface.setValue(key_powersave_enable, !checked)
@@ -98,8 +99,9 @@ Page {
 
                 automaticCheck: false
                 checked: values[key_powersave_force]
-                text: "Force powersave mode"
-                //description: qsTrId("settings_flight-la-flight-mode-description")
+                //: Powersave force enable switch text
+                //% "Force powersave mode"
+                text: qsTrId("settings-powersave-force_switch_text")
                 icon.source: "image://theme/icon-m-powersave-force"
 
                 onClicked: mceRequestIface.setValue(key_powersave_force, !checked)
